@@ -2,14 +2,8 @@ import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-dark  bg-dark shadow-sm">
       <div className="container-fluid">
-       
-        <NavLink className="navbar-brand fw-bold  text-uppercase" to="/">
-          Shoe Store
-        </NavLink>
-
-      
         <button
           className="navbar-toggler"
           type="button"
@@ -22,8 +16,8 @@ function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
+        <div className="collapse navbar-collapse  w-100  justify-content-center gap-5" id="navbarSupportedContent">
+          <ul className="navbar-nav  mb-2 mb-lg-0 ">
 
             <li className="nav-item">
               <NavLink className="nav-link fw-bold text-white" to="/">

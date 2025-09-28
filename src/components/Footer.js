@@ -8,7 +8,7 @@ function Footer() {
         <footer className="bg-dark py-4 ">
             <Container>
                 <Row>
-                    <Col xs={12} md={6} lg={3} className="mb-3">
+                    <Col xs={6} md={4} lg={3} className="mb-3">
                         <div className="p-3   text-white ">
                             <h2 className='ms-4'>Company</h2>
                             <ul>
@@ -19,7 +19,7 @@ function Footer() {
                             </ul>
                         </div>
                     </Col>
-                    <Col xs={12} md={6} lg={3} className="mb-3">
+                    <Col xs={6} md={4} lg={3} className="mb-3">
                         <div className="p-3  text-white ">
                             <h2 className='ms-4'>Get Help</h2>
                             <ul>
@@ -31,7 +31,7 @@ function Footer() {
                             </ul>
                         </div>
                     </Col>
-                    <Col xs={12} md={6} lg={3} className="mb-3">
+                    <Col xs={6} md={4} lg={3} className="mb-3">
                         <div className="p-3   text-white ">
                             <h2 className='ms-4'>Online Shop</h2>
                             <ul>
@@ -43,8 +43,8 @@ function Footer() {
                             </ul>
                         </div>
                     </Col>
-                    <Col xs={12} md={6} lg={3} className="mb-1 ">
-                        <div className="p-3  mt-3 text-center gap-5 d-flex  ">
+                    <Col xs={6} md={4} lg={3} className="mb-1 ">
+                        <div className="p-3  mt-3 text-center gap-4 d-flex  ">
                             
                                 <div><Link to="https://facebook.com" target="_blank" rel="noreferrer" className="text-light fs-5">
                                     <FaFacebookF />
