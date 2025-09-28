@@ -3,4 +3,146 @@ footer {
   bottom: 0;
   width: 100%;
   z-index: 1000;
+  height: 200px;
+}
+
+
+.card-bodyroot {
+    /* gap: 20px; */
+    max-width: 16rem;
+    font-weight: 10px;
+    width: 100%;
+    line-height: 15px;
+    font-family: sans-serif;
+    /* border: 2px solid red; */
+
+}
+
+.card-bodyroot img {
+    width: auto;
+    height: 200px;
+    padding: 2px;
+}
+.card-body button{
+     width: 120px;
+     height: 40px;
+     border-radius: 0.5rem;
+     background-color: lightblue;
+     color: black;
+}
+.card-body h5 ,p{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    /* border: 1px solid red; */
+}
+.information-childcontainer {
+    /* border: 1px solid green; */
+    margin: 1px;
+    width: 100%;
+    display: flex;
+
+}
+
+.shoes-card {
+    /* border: 1px solid black; */
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    gap: 20px;
+}
+
+.cart-container {
+    /* border: 1px solid blue; */
+    width: 60%;
+    margin: 4px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    font-family: sans-serif;
+    height: inherit;
+
+}
+
+.image {
+    width:70px ;
+    height: 70px;
+    border-radius: 5px;
+
+}
+.buttons{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    
+    
+}
+.buttons p{
+    font-size: 15px;
+    font-weight: 20px;
+    text-align: center;
+
+}
+
+
+@media (max-width:786px) {
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 10px;
+       
+    }
+    .buttons{
+    /* width: 130px; */
+   
+    justify-content:end ;
+    align-items: center;
+    text-align: center;
+    /* border: 2px solid red; */
+    }
+
+    .shoes-card img {
+        width: auto;
+        height: 350px;
+    }
+
+    .shoes-card {
+        display: wrap;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+    }
+
+    .card-bodyroot {
+        width: 100%;
+        flex: 1 1 calc(33.33% - 100px);
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .information-childcontainer {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        justify-content: space-between;
+        /* border: 2px solid red; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .image-name{
+        width: 1rem;
+       
+        margin-top: 0px;
+        
+    }
+
 }
