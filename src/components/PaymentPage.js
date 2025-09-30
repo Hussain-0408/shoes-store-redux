@@ -24,7 +24,7 @@ function PaymentPage() {
 
     return (
         <Container className="mt-2 gap-3 d-flex justify-content-center">
-            <Row className="w-100 justify-content-center d-flex      ">
+            <Row className="w-100 justify-content-center d-flex ms-5     ">
                 <Col xs={12} md={8} lg={6}>
 
                     <Formik

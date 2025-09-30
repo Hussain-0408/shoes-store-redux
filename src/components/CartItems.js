@@ -22,7 +22,7 @@ function CartItems() {
                 <Col xs={12} md={6} lg={12}>
 
                  <div className='bg-white border w-100 justify-content-center d-flex  mb-0 '>
-                    <div className='p-3 d-flex  gap-3 '>
+                    <div className='p-3 d-flex  gap-5 '>
                         <h2>Total:$</h2>
                      {shop ? (   <button className='btn btn-success btn-outline-danger text-white' onClick={handlenavigate}> Proced to Payment</button>) :
                                  (<button className='btn btn-success btn-outline-danger text-white' onClick={handleback}> Back to Shopping</button>)}
