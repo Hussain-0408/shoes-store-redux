@@ -10,7 +10,7 @@ import CardItems from './components/CardItems';
 
 function App() {
   return (
-    <div >
+    <div  className='bg-white'>
       <Header />
       <CardItems />
       <Footer />
