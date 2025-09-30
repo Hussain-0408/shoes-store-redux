@@ -8,8 +8,18 @@ import img12 from "../components/images/img12.jpg";
 import img13 from "../components/images/img13.jpg";
 import img14 from "../components/images/img14.jpg";
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { addToCart } from "../redux/actionCreaters/index";
 
 const CardItems = () => {
+
+  const dispatch = useDispatch();
+
+  const handleCart =(item)=>{
+    dispatch(addToCart(item));
+  }
+
+
   const cardsData = [
     { name: "Sandles", price: 200, img: img2 },
     { name: "Oxer Company", price: 500, img: img3 },
@@ -40,7 +50,7 @@ const CardItems = () => {
                   ₹{item.price}
                 </Card.Text>
                 <div className="d-grid">
-                  <button className="btn btn-primary rounded-pill">
+                  <button className="btn btn-primary rounded-pill" onClick={()=>handleCart(item)}>
                     Add to Cart
                   </button>
                 </div>
