@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useSelector } from "react-redux";
 
 function PaymentPage() {
     const validationSchema = Yup.object({
@@ -21,6 +22,8 @@ function PaymentPage() {
                 schema.required("CVV is required").length(3, "Must be 3 digits"),
         }),
     });
+
+     const { items = [], totalAmount = 0 } = useSelector((state) => state.cart ? state.cart : { items: [], totalAmount: 0 });
 
     return (
         <Container className="mt-2 gap-3 d-flex justify-content-center">
@@ -113,7 +116,7 @@ function PaymentPage() {
                             </div>
 
                             <div className="text-center my-3">
-                                <h4>Total Amount: $</h4>
+                                <h4>Total Amount: ${totalAmount}</h4>
                             </div>
 
                             <div className="d-grid">

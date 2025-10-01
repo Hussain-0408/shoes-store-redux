@@ -33,7 +33,7 @@ const CardItems = () => {
   ];
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-4" fluid>
       <Row className="g-4">
         {cardsData.map((item, index) => (
           <Col key={index} xs={12} sm={6} md={4} lg={3}>
