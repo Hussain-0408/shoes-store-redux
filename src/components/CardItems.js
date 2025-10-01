@@ -8,12 +8,13 @@ import img12 from "../components/images/img12.jpg";
 import img13 from "../components/images/img13.jpg";
 import img14 from "../components/images/img14.jpg";
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { addToCart } from "../redux/actionCreaters/index";
 
 const CardItems = () => {
 
   const dispatch = useDispatch();
+   const { items = [], totalAmount = 0 } = useSelector((state) => state.cart ? state.cart : { items: [], totalAmount: 0 });
 
   const handleCart =(item)=>{
     dispatch(addToCart(item));
@@ -50,8 +51,8 @@ const CardItems = () => {
                   ₹{item.price}
                 </Card.Text>
                 <div className="d-grid">
-                  <button className="btn btn-primary rounded-pill" onClick={()=>handleCart(item)}>
-                    Add to Cart
+                  <button disabled={items.find(product => product.name === item.name) } className="btn btn-primary rounded-pill" onClick={()=>handleCart(item)}>
+                     {items.find(product => product.name === item.name) ? "Add me " :"Add to Cart"}
                   </button>
                 </div>
               </Card.Body>
