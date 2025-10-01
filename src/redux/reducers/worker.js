@@ -1,5 +1,5 @@
 
-import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART } from "../actionTypes";
+import { ADD_TO_CART, DecreaseCart, IncreaseCart } from "../actionTypes";
 
 const initialState = {
   items: [],
@@ -29,24 +29,43 @@ export const cartReducer = (state = initialState, action) => {
       return { ...state, items: updatedItems, totalAmount };
     }
 
-
-
-    case REMOVE_FROM_CART: {
-      const name = action.payload;
-      const updatedItems = state.items.filter((i) => i.name !== name);
+    case IncreaseCart: {
+      const itemName = action.payload;
+      const updatedItems = state.items.map((i) =>
+        i.name === itemName ? { ...i, quantity: i.quantity + 1 } : i
+      );
       const totalAmount = updatedItems.reduce(
         (sum, i) => sum + i.price * i.quantity,
         0
       );
+
+      return { ...state, items: updatedItems, totalAmount };
+    }
+
+    case DecreaseCart: {
+      const itemName = action.payload;
+      let updatedItems = state.items.map((i) =>
+        i.name === itemName ? { ...i, quantity: i.quantity - 1 } : i
+      );
+      
+      updatedItems = updatedItems.filter((i) => i.quantity > 0);
+
+      const totalAmount = updatedItems.reduce(
+        (sum, i) => sum + i.price * i.quantity,
+        0
+      );
+
       return { ...state, items: updatedItems, totalAmount };
     }
 
 
-
-    case CLEAR_CART:
-      return { items: [], totalAmount: 0 };
-
     default:
       return state;
   }
+
+
+
 };
+
+
+

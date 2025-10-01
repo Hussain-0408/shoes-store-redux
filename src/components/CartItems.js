@@ -1,14 +1,24 @@
 import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { IncreaseCart, DecreaseCart } from "../redux/actionTypes";
+
 
 function CartItems() {
     const [shop, setShop] = useState(true)
     const navigate = useNavigate();
     const { items = [], totalAmount = 0 } = useSelector((state) => state.cart ? state.cart : { items: [], totalAmount: 0 });
 
+     const dispatch = useDispatch();
+    const handleincrease = (itemName) => {
+        dispatch({ type: IncreaseCart, payload: itemName });
+    };
 
+   
+    const handledecrease = (itemName) => {
+        dispatch({ type: DecreaseCart, payload: itemName });
+    };
     const handlenavigate = () => {
         navigate("/PaymentPage")
         setShop(false)
@@ -37,13 +47,13 @@ function CartItems() {
                                     <Col xs={12} md={6} lg={6} key={index} className="mb-3">
                                         <div className="shadow-lg p-4 d-flex flex-row justify-content-between">
                                             <Col className='d-flex flex-column align-items-start'>
-                                            <h4>{item.name}</h4>
-                                            <p>₹{item.price}</p>
+                                                <h4>{item.name}</h4>
+                                                <p>₹{item.price}</p>
                                             </Col>
                                             <Col className='d-flex p-2 align-items-center  justify-content-center gap-4'>
-                                            <button className=' btn btn-primary p-1 d-flex text-center justify-content-center align-items-center' style={{width:"20px", height:"25px",borderRadius:"0.2rem"}}> - </button>
-                                            <span> {item.quantity}</span>
-                                            <button className='btn btn-primary p-1 d-flex text-center justify-content-center align-items-center' style={{width:"20px", height:"25px",borderRadius:"0.2rem"}}> + </button>
+                                                <button onClick={()=>handleincrease(item.name)} className=' btn btn-primary p-1 d-flex text-center justify-content-center align-items-center' style={{ width: "20px", height: "25px", borderRadius: "0.2rem" }}> - </button>
+                                                <span> {item.quantity}</span>
+                                                <button onClick={()=>handleincrease(item.name)} className='btn btn-primary p-1 d-flex text-center justify-content-center align-items-center' style={{ width: "20px", height: "25px", borderRadius: "0.2rem" }}> + </button>
                                             </Col>
                                         </div>
                                     </Col>
