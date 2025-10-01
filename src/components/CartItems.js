@@ -11,18 +11,20 @@ function CartItems() {
     const { items = [], totalAmount = 0 } = useSelector((state) => state.cart ? state.cart : { items: [], totalAmount: 0 });
 
      const dispatch = useDispatch();
+
     const handleincrease = (itemName) => {
         dispatch({ type: IncreaseCart, payload: itemName });
+         
     };
 
    
     const handledecrease = (itemName) => {
         dispatch({ type: DecreaseCart, payload: itemName });
     };
+
     const handlenavigate = () => {
         navigate("/PaymentPage")
         setShop(false)
-
     }
 
     const handleback = () => {
@@ -51,7 +53,7 @@ function CartItems() {
                                                 <p>₹{item.price}</p>
                                             </Col>
                                             <Col className='d-flex p-2 align-items-center  justify-content-center gap-4'>
-                                                <button onClick={()=>handleincrease(item.name)} className=' btn btn-primary p-1 d-flex text-center justify-content-center align-items-center' style={{ width: "20px", height: "25px", borderRadius: "0.2rem" }}> - </button>
+                                                <button onClick={()=>handledecrease(item.name)} className=' btn btn-primary p-1 d-flex text-center justify-content-center align-items-center' style={{ width: "20px", height: "25px", borderRadius: "0.2rem" }}> - </button>
                                                 <span> {item.quantity}</span>
                                                 <button onClick={()=>handleincrease(item.name)} className='btn btn-primary p-1 d-flex text-center justify-content-center align-items-center' style={{ width: "20px", height: "25px", borderRadius: "0.2rem" }}> + </button>
                                             </Col>
