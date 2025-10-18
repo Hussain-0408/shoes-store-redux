@@ -26,9 +26,9 @@ function PaymentPage() {
      const { items = [], totalAmount = 0 } = useSelector((state) => state.cart ? state.cart : { items: [], totalAmount: 0 });
 
     return (
-        <Container className="mt-2 gap-3 d-flex justify-content-center">
+        <Container className="mt-2 mb-2 p-2 gap-3  d-flex justify-content-center">
             <Row className="w-100 justify-content-center d-flex ms-5     ">
-                <Col xs={12} md={8} lg={6}>
+                <Col xs={12} md={6} lg={6} >
 
                     <Formik
                         initialValues={{
@@ -38,9 +38,9 @@ function PaymentPage() {
                             cvv: "",
                         }}
                         validationSchema={validationSchema}  >
-                        <Form className="p-4 border w-75 d-flex justify-content-center flex-column rounded shadow">
+                        <Form className=" border w-75 d-flex bg-white justify-content-center flex-column align-items-start rounded shadow">
                             {/* Payment Method */}
-                            <div className="mb-3">
+                            <div className="mb-3 ">
                                 <div className="p-2 ms-3  fs-5">
                                     <label className="me-3">
                                         <Field

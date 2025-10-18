@@ -8,7 +8,7 @@ function Footer() {
         <footer className="bg-dark py-1  ">
             <Container>
                 <Row>
-                    <Col xs={6} md={4} lg={3} className="mb-3">
+                    <Col xs={6} md={4} lg={3} className="p-3">
                         <div className="p-3   text-white ">
                             <h2 className='ms-4'>Company</h2>
                             <ul>

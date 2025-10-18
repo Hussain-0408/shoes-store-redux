@@ -13,9 +13,9 @@ import { Card } from 'react-bootstrap';
 
 function App() {
   return (
-    <div  className='bg-white'>
+    <div  style={{backgroundColor:"#e1d1b6"}}>
       <Header />
-      <CartItems />
+      {/* <CartItems /> */}
      
       <Routes>
         <Route path='/' element={<CardItems/>} />

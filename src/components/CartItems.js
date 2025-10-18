@@ -66,7 +66,7 @@ function CartItems() {
                 </Row>
                 <Row>
                     <Col md={12} lg={12} xs={12} className='border'>
-                        <div className='bg-white w-100 justify-content-center d-flex  mb-0 '>
+                        <div className=' w-100 justify-content-center d-flex  mb-0 ' >
                             <div className='p-3 d-flex  gap-5 '>
                                 <h2>Total:${totalAmount}</h2>
                                 {shop ? (<button className='btn btn-success btn-outline-danger text-white' onClick={handlenavigate}> Proced to Payment</button>) :

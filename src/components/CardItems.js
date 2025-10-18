@@ -38,20 +38,20 @@ const CardItems = () => {
       <Row className="g-4">
         {cardsData.map((item, index) => (
           <Col key={index} xs={12} sm={6} md={4} lg={3}>
-            <Card className="h-100 shadow-sm border-0 rounded-3">
+            <Card className="h-100 bg-success text-white p-1 mb-1 shadow-sm border-0 rounded-3">
               <Card.Img
                 variant="top"
                 src={item.img}
                 alt={item.name}
                 style={{ height: "220px", objectFit: "cover" }}
               />
-              <Card.Body className="d-flex flex-column justify-content-between">
-                <Card.Title className="text-center">{item.name}</Card.Title>
-                <Card.Text className="text-center text-muted fs-5">
+              <Card.Body className="d-flex flex-column p-2  justify-content-between">
+                <Card.Title className="text-center  fs-4">{item.name}</Card.Title>
+                <Card.Text className="text-center  fs-4">
                   ₹{item.price}
                 </Card.Text>
                 <div className="d-grid">
-                  <button disabled={items.find(product => product.name === item.name) } className="btn btn-primary rounded-pill" onClick={()=>handleCart(item)}>
+                  <button disabled={items.find(product => product.name === item.name) } className="btn bg-white  rounded-pill border-danger fs-5 p-2" onClick={()=>handleCart(item)}>
                      {items.find(product => product.name === item.name) ? "Add me " :"Add to Cart"}
                   </button>
                 </div>

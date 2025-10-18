@@ -1,13 +1,17 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import HeaderCardButton from "../components/HeaderCardButton";
 
 function Header() {
   return (
     <Container fluid>
       <Row>
         <Col xs={12} lg={12}>
-          <nav className="navbar navbar-expand-lg navbar-dark fixed-top bg-dark shadow-sm">
-            <div className="w-100">
+          <nav className="navbar navbar-expand-lg  navbar-dark fixed-top bg-dark rounded shadow-sm">
+            <div className=" w-25 align-items-center   p-3 text-center">
+              <h1 className="text-white">Shoes Store</h1>
+            </div>
+            <div className="w-100 ">
               <button
                 className="navbar-toggler"
                 type="button"
@@ -20,8 +24,8 @@ function Header() {
                 <span className="navbar-toggler-icon"></span>
               </button>
 
-              <div className="collapse navbar-collapse  w-100  justify-content-center gap-5" id="navbarSupportedContent">
-                <ul className="navbar-nav  mb-2 mb-lg-0 ">
+              <div className="collapse navbar-collapse   justify-content-arround p-1  w-100   gap-5" id="navbarSupportedContent">
+                <ul className="navbar-nav     p-3 gap-4 mb-2 mb-lg-0 ">
 
                   <li className="nav-item">
                     <NavLink className="nav-link fw-bold text-white" to="/">
@@ -40,7 +44,7 @@ function Header() {
                     >
                       Categories
                     </NavLink>
-                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <ul className="dropdown-menu border" aria-labelledby="navbarDropdown">
                       <li>
                         <NavLink className="dropdown-item" to="/mens">
                           Mens
@@ -70,20 +74,24 @@ function Header() {
                     </NavLink>
                   </li>
                 </ul>
-                <form className="d-flex ms-lg-3 mt-2 mt-lg-0 ">
+                <form className="d-flex   p-3 gap-3 ms-lg-3 mt-2 mt-lg-0 ">
                   <input
                     className="form-control me-2 "
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
                   />
-                  <button className="btn btn-outline-success fw-bold text-white" type="submit">
+                  <button className="btn btn-outline-success fw-bold text-white " style={{width:"150px"}} type="submit">
                     Search
-                  </button>
+                  </button>      
                 </form>
+                  <HeaderCardButton/>
               </div>
+              
             </div>
+            
           </nav>
+          
         </Col>
       </Row>
     </Container>
