@@ -19,7 +19,9 @@ function App() {
      
       <Routes>
         <Route path='/' element={<CardItems/>} />
-        <Route path='/PaymentPage' element = {<PaymentPage/>} />
+        <Route path='/PaymentPage' element = {<PaymentPage/>} /> 
+        <Route path='/Cartitems' element={<CartItems/>} />
+
       </Routes>
       <Footer />
       

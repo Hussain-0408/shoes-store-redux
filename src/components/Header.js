@@ -7,9 +7,9 @@ function Header() {
     <Container fluid>
       <Row>
         <Col xs={12} lg={12}>
-          <nav className="navbar navbar-expand-lg  navbar-dark fixed-top bg-dark rounded shadow-sm">
-            <div className=" w-25 align-items-center   p-3 text-center">
-              <h1 className="text-white">Shoes Store</h1>
+          <nav className="navbar navbar-expand-lg  navbar-dark fixed-top  rounded shadow-sm" style={{backgroundColor:"gray"}}>
+            <div className=" w-25 align-items-center    p-3 text-center">
+              <h1 className="text-white fs-1">Shoes Store</h1>
             </div>
             <div className="w-100 ">
               <button
@@ -81,7 +81,7 @@ function Header() {
                     placeholder="Search"
                     aria-label="Search"
                   />
-                  <button className="btn btn-outline-success fw-bold text-white " style={{width:"150px"}} type="submit">
+                  <button className="btn btn-outline-success fw-bold fs-5 text-white " style={{width:"150px"}} type="submit">
                     Search
                   </button>      
                 </form>

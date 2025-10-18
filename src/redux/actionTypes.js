@@ -4,3 +4,4 @@ export const ADD_TO_CART = "ADD_TO_CART";
 // export const CLEAR_CART = "CLEAR_CART";
 export const IncreaseCart = "INCREASE_CART";
 export const DecreaseCart = "DECREASE_CART";
+export const ADD_TO_CART2 = "ADD_TO_CART2";

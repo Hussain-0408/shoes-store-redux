@@ -1,5 +1,5 @@
 
-import { ADD_TO_CART, DecreaseCart, IncreaseCart } from "../actionTypes";
+import { ADD_TO_CART2, ADD_TO_CART, DecreaseCart, IncreaseCart } from "../actionTypes";
 
 const initialState = {
   items: [],
@@ -28,6 +28,22 @@ export const cartReducer = (state = initialState, action) => {
 
       return { ...state, items: updatedItems, totalAmount };
     }
+
+    case ADD_TO_CART2 : {
+       const item1 = action.payload;
+      const existingItem1 = state.items.find((i) => i.name === item1.name);
+
+       let updatedItems;
+      if (existingItem1) {
+        updatedItems = state.items.map((i) =>
+          i.name === item1.name ? { ...i, quantity: i.quantity + 1 } : i
+        );
+    };
+
+
+
+     return { ...state, items: updatedItems };
+  }
 
     case IncreaseCart: {
       const itemName = action.payload;
