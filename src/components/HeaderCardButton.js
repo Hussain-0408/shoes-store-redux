@@ -12,7 +12,6 @@ const HeaderCardButton = (props) => {
     );
 
 
-
     const navigate = useNavigate()
     const handlechange = () => {
         navigate('/Cartitems')

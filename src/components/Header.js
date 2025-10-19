@@ -1,14 +1,23 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import HeaderCardButton from "../components/HeaderCardButton";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const [search, setSearch] = useState("");
+  const { items = [] } = useSelector((state) => state.cart ? state.cart : { items: [] });
+
+  const filteredItems = items.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <Container fluid>
       <Row>
         <Col xs={12} lg={12}>
-          <nav className="navbar navbar-expand-lg  navbar-dark fixed-top  rounded shadow-sm" style={{backgroundColor:"gray"}}>
-            <div className="  align-items-center p-1   " style={{width:"350px"}}>
+          <nav className="navbar navbar-expand-lg  navbar-dark fixed-top  rounded shadow-sm" style={{ backgroundColor: "gray" }}>
+            <div className="  align-items-center p-1   " style={{ width: "350px" }}>
               <h1 className="text-white fs-1 fw-bold">Shoes Store</h1>
             </div>
             <div className="w-100 ">
@@ -35,7 +44,7 @@ function Header() {
 
                   <li className="nav-item dropdown">
                     <NavLink
-                      className="nav-link dropdown-toggle"
+                      className="nav-link dropdown-toggle "
 
                       id="navbarDropdown"
                       role="button"
@@ -74,26 +83,35 @@ function Header() {
                     </NavLink>
                   </li>
                 </ul>
-                <form className="d-flex   p-3 gap-3 ms-lg-3 mt-2 mt-lg-0 ">
+
+
+                <form className="d-flex   p-3 gap-3 ms-lg-3 mt-2 mt-lg-0 " onSubmit={(e) => e.preventDefault()}>
                   <input
                     className="form-control me-2 "
                     type="search"
                     placeholder="Search"
+                    value={search}
                     aria-label="Search"
+                    onChange={(e) => setSearch(e.target.value)}
+                    style={{width:"500px"}}
                   />
-                  <button className="btn btn-outline-success fw-bold fs-5 text-white " style={{width:"150px"}} type="submit">
+                  {/* <button className="btn btn-outline-success fw-bold fs-5 text-white " style={{ width: "150px" }} >
                     Search
-                  </button>      
+                  </button> */}
                 </form>
-                  <HeaderCardButton/>
+
+
+                <HeaderCardButton />
               </div>
-              
+
             </div>
-            
+
           </nav>
-          
+
         </Col>
       </Row>
+
+      
     </Container>
   );
 }
