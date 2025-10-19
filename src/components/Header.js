@@ -8,8 +8,8 @@ function Header() {
       <Row>
         <Col xs={12} lg={12}>
           <nav className="navbar navbar-expand-lg  navbar-dark fixed-top  rounded shadow-sm" style={{backgroundColor:"gray"}}>
-            <div className=" w-25 align-items-center    p-3 text-center">
-              <h1 className="text-white fs-1">Shoes Store</h1>
+            <div className="  align-items-center p-1   " style={{width:"350px"}}>
+              <h1 className="text-white fs-1 fw-bold">Shoes Store</h1>
             </div>
             <div className="w-100 ">
               <button

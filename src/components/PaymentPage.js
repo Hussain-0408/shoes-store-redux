@@ -3,6 +3,8 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useSelector } from "react-redux";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function PaymentPage() {
     const validationSchema = Yup.object({
@@ -23,113 +25,137 @@ function PaymentPage() {
         }),
     });
 
-     const { items = [], totalAmount = 0 } = useSelector((state) => state.cart ? state.cart : { items: [], totalAmount: 0 });
+    const { items = [], totalAmount = 0 } = useSelector((state) => state.cart ? state.cart : { items: [], totalAmount: 0 });
+
+    const navigate = useNavigate()
+
+    const handlebackcart = ()=>{
+      navigate(-1)
+    }
 
     return (
-        <Container className="mt-2 mb-2 p-2 gap-3  d-flex justify-content-center">
-            <Row className="w-100 justify-content-center d-flex ms-5     ">
-                <Col xs={12} md={6} lg={6} >
+        <div>
+            <button
+                className="btn btn-outline-primary fw-bold rounded-circle d-flex align-items-center justify-content-center position-absolute ms-5 mt-3"
+                style={{
+                    width: "40px",
+                    height: "40px",
+                    // top: "20px",
+                    // left: "20px",
+                    // backgroundColor: "red"
 
-                    <Formik
-                        initialValues={{
-                            paymentMethod: "",
-                            cardNumber: "",
-                            expiry: "",
-                            cvv: "",
-                        }}
-                        validationSchema={validationSchema}  >
-                        <Form className=" border w-75 d-flex bg-white justify-content-center flex-column align-items-start rounded shadow">
-                            {/* Payment Method */}
-                            <div className="mb-3 ">
-                                <div className="p-2 ms-3  fs-5">
-                                    <label className="me-3">
-                                        <Field
-                                            type="radio"
-                                            name="paymentMethod"
-                                            value="cash"
-                                            className="me-1"
-                                        />
-                                        Cash on Delivery
-                                    </label>
-                                    <label>
-                                        <Field
-                                            type="radio"
-                                            name="paymentMethod"
-                                            value="credit"
-                                            className="me-1"
-                                        />
-                                        Credit Card
-                                    </label>
-                                </div>
-                                <h3 className="mt-4 fs-2 p-1">Payment Details:</h3>
+                }}
+                onClick={handlebackcart}
+            >
+                <FaArrowLeft size={100} />
+            </button>
 
-                                <ErrorMessage
-                                    name="paymentMethod"
-                                    component="div"
-                                    className="text-danger small"
-                                />
-                            </div>
 
-                            <div className="mb-3">
-                                <label>Card Number</label>
-                                <Field
-                                    type="text"
-                                    name="cardNumber"
-                                    className="form-control"
-                                    placeholder="Enter card number"
-                                />
-                                <ErrorMessage
-                                    name="cardNumber"
-                                    component="div"
-                                    className="text-danger small"
-                                />
-                            </div>
-                            <div className="row">
-                                <div className="col-md-6 mb-3">
-                                    <label>Expiry Date</label>
-                                    <Field
-                                        type="date"
-                                        name="expiry"
-                                        className="form-control"
-                                    />
+            <Container className="mt-2 mb-2 p-2 gap-3  d-flex justify-content-center">
+                <Row className="w-100 justify-content-center d-flex ms-5     ">
+                    <Col xs={12} md={6} lg={6} >
+
+                        <Formik
+                            initialValues={{
+                                paymentMethod: "",
+                                cardNumber: "",
+                                expiry: "",
+                                cvv: "",
+                            }}
+                            validationSchema={validationSchema}  >
+                            <Form className=" border w-75 d-flex bg-white justify-content-center flex-column align-items-start rounded shadow">
+                                {/* Payment Method */}
+                                <div className="mb-3 ">
+                                    <div className="p-2 ms-3  fs-5">
+                                        <label className="me-3">
+                                            <Field
+                                                type="radio"
+                                                name="paymentMethod"
+                                                value="cash"
+                                                className="me-1"
+                                            />
+                                            Cash on Delivery
+                                        </label>
+                                        <label>
+                                            <Field
+                                                type="radio"
+                                                name="paymentMethod"
+                                                value="credit"
+                                                className="me-1"
+                                            />
+                                            Credit Card
+                                        </label>
+                                    </div>
+                                    <h3 className="mt-4 fs-2 p-1">Payment Details:</h3>
+
                                     <ErrorMessage
-                                        name="expiry"
+                                        name="paymentMethod"
                                         component="div"
                                         className="text-danger small"
                                     />
                                 </div>
-                                <div className="col-md-6 mb-3">
-                                    <label>CVV</label>
+
+                                <div className="mb-3">
+                                    <label>Card Number</label>
                                     <Field
-                                        type="password"
-                                        name="cvv"
+                                        type="text"
+                                        name="cardNumber"
                                         className="form-control"
-                                        placeholder="123"
-                                        maxLength="3"
+                                        placeholder="Enter card number"
                                     />
                                     <ErrorMessage
-                                        name="cvv"
+                                        name="cardNumber"
                                         component="div"
                                         className="text-danger small"
                                     />
                                 </div>
-                            </div>
+                                <div className="row">
+                                    <div className="col-md-6 mb-3">
+                                        <label>Expiry Date</label>
+                                        <Field
+                                            type="date"
+                                            name="expiry"
+                                            className="form-control"
+                                        />
+                                        <ErrorMessage
+                                            name="expiry"
+                                            component="div"
+                                            className="text-danger small"
+                                        />
+                                    </div>
+                                    <div className="col-md-6 mb-3">
+                                        <label>CVV</label>
+                                        <Field
+                                            type="password"
+                                            name="cvv"
+                                            className="form-control"
+                                            placeholder="123"
+                                            maxLength="3"
+                                        />
+                                        <ErrorMessage
+                                            name="cvv"
+                                            component="div"
+                                            className="text-danger small"
+                                        />
+                                    </div>
+                                </div>
 
-                            <div className="text-center my-3">
-                                <h4>Total Amount: ${totalAmount}</h4>
-                            </div>
+                                <div className="text-center my-3">
+                                    <h4>Total Amount: ${totalAmount}</h4>
+                                </div>
 
-                            <div className="d-grid">
-                                <Button type="submit" variant="success" className=" btn border-danger">
-                                    Complete Payment
-                                </Button>
-                            </div>
-                        </Form>
+                                <div className="d-grid">
+                                    <Button type="submit" variant="success" className=" btn border-danger">
+                                        Complete Payment
+                                    </Button>
+                                </div>
+                            </Form>
 
-                    </Formik>
-                </Col>
-            </Row>
-        </Container>
+                        </Formik>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     );
 }
 
