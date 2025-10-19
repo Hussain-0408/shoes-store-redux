@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
@@ -7,11 +7,8 @@ import '../styles/Cartitems.css';
 import { FaArrowLeft } from "react-icons/fa";
 
 
-
-
-
 function CartItems() {
-    const [shop, setShop] = useState(true)
+    // const [shop, setShop] = useState(true)
     const navigate = useNavigate();
     const { items = [], totalAmount = 0 } = useSelector((state) => state.cart ? state.cart : { items: [], totalAmount: 0 });
 
@@ -29,13 +26,14 @@ function CartItems() {
 
     const handlenavigate = () => {
         navigate("/PaymentPage")
-        setShop(false)
+        // setShop(false)
     }
 
     const handleback = () => {
         navigate("/");
-        setShop(true)
+        // setShop(true)
     };
+
 
     return (
         <div >
@@ -55,11 +53,10 @@ function CartItems() {
             </button>
 
             <Container fluid>
-                <Row>
-                    <div xs={12} className='d-flex flex-column text-center'>
-                        <h2 className='fs-1 text-center p-3'>Cart</h2>
-                    </div>
-
+                <div xs={12} className='d-flex flex-column text-center'>
+                    <h2 className='fs-1 text-center p-3'>Cart</h2>
+                </div>
+                <Row className='cartrow'>
                     <Col xs={12} md={6} lg={6}>
                         <div className="mt-3 d-flex flex-column align-items-center rounded-1 ">
 
@@ -96,7 +93,7 @@ function CartItems() {
 
                         </div>
                     </Col>
-                    <Col xs={12} md={6} lg={6}>
+                    <Col xs={12} md={6} lg={6} >
                         <div className='border mt-3 p-3 bg-white shadow-md  rounded-1 ' style={{ maxWidth: "400px ", margin: "0 auto" }} >
                             <h1 className='fs-3 fw-bold p-2'> Total Price : ₹ {totalAmount} </h1>
                             <div className='text-center mt-4'>
@@ -104,6 +101,7 @@ function CartItems() {
                             </div>
                         </div>
                     </Col>
+
 
 
 
