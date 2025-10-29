@@ -1,4 +1,4 @@
-import { ADD_TO_CART,ADD_TO_CART2, REMOVE_FROM_CART, CLEAR_CART,IncreaseCart,DecreaseCart  } from "../actionTypes";
+import { ADD_TO_CART,ADD_TO_CART2,IncreaseCart,DecreaseCart  } from "../actionTypes";
 
 
 

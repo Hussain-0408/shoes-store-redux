@@ -36,9 +36,12 @@ export const cartReducer = (state = initialState, action) => {
        let updatedItems;
       if (existingItem1) {
         updatedItems = state.items.map((i) =>
-          i.name === item1.name ? { ...i, quantity: i.quantity + 1 } : i
-        );
-    };
+          i.name !== item1.name ? { ...i, quantity: i.quantity + 1 } : i
+        )
+       
+    }  else {
+        updatedItems = [...state.items, { ...item1, quantity: 1 }];
+      }
 
 
 
