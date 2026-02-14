@@ -28,8 +28,8 @@ const CardItems = () => {
     { name: "Sneakers", price: 300, img: img5 },
     { name: "Nike", price: 400, img: img11 },
      { name: "Wood Land", price: 200, img: img12 },
-      { name: "Campus", price: 200, img: img13 },
-       { name: "Killer", price: 200, img: img14 },
+      { name: "Campus", price: 500, img: img13 },
+       { name: "Killer", price: 300, img: img14 },
         
   ];
 
