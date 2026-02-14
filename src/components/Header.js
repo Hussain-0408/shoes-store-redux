@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 function Header() {
   const [search, setSearch] = useState("");
-  const { items = [] } = useSelector((state) => state.cart ? state.cart : { items: [] });
+  // const { items = [] } = useSelector((state) => state.cart ? state.cart : { items: [] });
 
   // const filteredItems = items.filter((item) =>
   //   item.name.toLowerCase().includes(search.toLowerCase())

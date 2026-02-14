@@ -1,5 +1,5 @@
 // import CarIcon from "./CartIcon"
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import classes from '../styles/HeaderCardButton.module.css'
 import { useNavigate } from "react-router-dom"
 // import { addToCart2 } from "../redux/actionCreaters/index";
