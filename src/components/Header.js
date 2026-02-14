@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import HeaderCardButton from "../components/HeaderCardButton";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -8,9 +8,9 @@ function Header() {
   const [search, setSearch] = useState("");
   const { items = [] } = useSelector((state) => state.cart ? state.cart : { items: [] });
 
-  const filteredItems = items.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase())
-  );
+  // const filteredItems = items.filter((item) =>
+  //   item.name.toLowerCase().includes(search.toLowerCase())
+  // );
 
   return (
     <Container fluid>

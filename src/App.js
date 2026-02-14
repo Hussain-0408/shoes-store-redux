@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import CardItems from './components/CardItems';
 import CartItems from './components/CartItems';
 import PaymentPage from './components/PaymentPage';
-import { Card } from 'react-bootstrap';
+// import { Card } from 'react-bootstrap';
 
 
 

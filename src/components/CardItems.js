@@ -14,7 +14,7 @@ import { addToCart } from "../redux/actionCreaters/index";
 const CardItems = () => {
 
   const dispatch = useDispatch();
-   const { items = [], totalAmount = 0 } = useSelector((state) => state.cart ? state.cart : { items: [], totalAmount: 0 });
+   const { items = [] } = useSelector((state) => state.cart ? state.cart : { items: [], totalAmount: 0 });
 
   const handleCart =(item)=>{
     dispatch(addToCart(item));

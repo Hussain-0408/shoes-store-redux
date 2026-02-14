@@ -2,12 +2,12 @@
 import { useDispatch, useSelector } from 'react-redux'
 import classes from '../styles/HeaderCardButton.module.css'
 import { useNavigate } from "react-router-dom"
-import { addToCart2 } from "../redux/actionCreaters/index";
+// import { addToCart2 } from "../redux/actionCreaters/index";
 // import { IncreaseCart, DecreaseCart } from "../redux/actionTypes";
 
 const HeaderCardButton = (props) => {
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     const totalQuantity = useSelector((state) =>
         state.cart.items.reduce((sum, item) => sum + item.quantity, 0),
