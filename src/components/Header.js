@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { NavLink} from "react-router-dom";
 import HeaderCardButton from "../components/HeaderCardButton";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 function Header() {
   const [search, setSearch] = useState("");
